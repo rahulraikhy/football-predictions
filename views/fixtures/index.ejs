@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+
+    <h1>All Fixtures</h1>
+
+    <table>
+        <thead>
+            <th>Fixture</th>
+            <th>Home Score</th>
+            <th>Away Score</th>
+            <th>Goalscorer</th>
+        </thead>
+        <tbody>
+            <% fixtures.forEach(function(fixture) { %>
+                <tr>
+                    <td>
+                        <%= fixture.fixture %>
+                    </td>
+                    <td>
+                        <%= fixture.homeScore %>
+                    </td>
+                    <td>
+                        <%= fixture.awayScore %>
+                    </td>
+                    <td>
+                        <%= fixture.goalScorer %>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+
+    </table>
+
+    <%- include('../partials/footer') %>
