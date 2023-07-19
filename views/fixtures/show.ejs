@@ -21,6 +21,22 @@
 
     <br><br>
 
+    <h2>All Fixtures</h2>
+    <form id="add-prediction-form" method="POST" action="/fixtures/<%= fixture._id %>/prediction">
+        <br>
+        <label>Home Score:</label>
+        <input type="number" name="homeScore">
+        <br>
+        <label>Away Score:</label>
+        <input type="number" name="awayScore">
+        <br>
+        <label>Goalscorer:</label>
+        <input type="string" name="goalScorer">
+        <br>
+        <label>Add Prediction:</label>
+        <br>
+        <button type="submit">Add Prediction</button>
 
+    </form>
 
     <%- include('../partials/footer') %>

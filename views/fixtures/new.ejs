@@ -1,52 +1,15 @@
-<% const fixturesList=[{ homeTeam: 'Liverpool' , awayTeam: 'Chelsea' },{ homeTeam: 'Liverpool' , awayTeam: 'Bournemouth'
-    }, { homeTeam: 'Newcastle' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'Aston Villa' }, {
-    homeTeam: 'Wolves' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'West Ham' }, {
-    homeTeam: 'Tottenham' , awayTeam: 'Liverpool' }, { homeTeam: 'Brighton' , awayTeam: 'Liverpool' }, {
-    homeTeam: 'Liverpool' , awayTeam: 'Everton' }, { homeTeam: 'Liverpool' , awayTeam: 'Nottm Forest' }, {
-    homeTeam: 'Luton' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'Brentford' }, {
-    homeTeam: 'Man City' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'Fulham' }, {
-    homeTeam: 'Sheffield United' , awayTeam: 'Liverpool' }, { homeTeam: 'Crystal Palace' , awayTeam: 'Liverpool' }, {
-    homeTeam: 'Liverpool' , awayTeam: 'Man United' }, { homeTeam: 'Liverpool' , awayTeam: 'Arsenal' }, {
-    homeTeam: 'Burnley' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'Newcastle' }, {
-    homeTeam: 'Bournemouth' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'Chelsea' }, {
-    homeTeam: 'Arsenal' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'Burnley' }, {
-    homeTeam: 'Brentford' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'Luton Town' }, {
-    homeTeam: 'Nottm Forest' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'Man City' }, {
-    homeTeam: 'Everton' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'Brighton' }, {
-    homeTeam: 'Liverpool' , awayTeam: 'Sheffield United' }, { homeTeam: 'Man United' , awayTeam: 'Liverpool' }, {
-    homeTeam: 'Liverpool' , awayTeam: 'Crystal Palace' }, { homeTeam: 'Fulham' , awayTeam: 'Liverpool' }, {
-    homeTeam: 'West Ham' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'Tottenham' }, {
-    homeTeam: 'Aston Villa' , awayTeam: 'Liverpool' }, { homeTeam: 'Liverpool' , awayTeam: 'Wolves' },] %>
+<%- include('../partials/header') %>
 
-    <%- include('../partials/header') %>
+    <h1>New Score Prediction</h1>
+    <form id="new-form" action="/fixtures" method="POST">
+        <label>Fixture:</label>
 
-        <h1>New Score Prediction</h1>
-        <form id="new-form" action="/fixtures" method="POST">
-            <label>Fixture:</label>
-            <select name="fixture" id="">
-                <% fixturesList.forEach((f)=> { %>
-                    <option value="Fixture">
-                        <%= f.homeTeam %> vs <%= f.awayTeam %>
-                    </option>
-                    <% }) %>
-            </select>
-            <br>
-            <label>Home Score:</label>
-            <input type="number" name="homeScore">
-            <br>
-            <label>Away Score:</label>
-            <input type="number" name="awayScore">
-            <br>
-            <label>Goalscorer:</label>
-            <input type="string" name="goalScorer">
-            <br>
-            <label>Add Prediction:</label>
-            <br>
-            <button type="submit">Add Prediction</button>
-        </form>
+        </select>
 
-        <p>
-            <%= errorMsg %>
-        </p>
+    </form>
 
-        <%- include('../partials/footer') %>
+    <p>
+        <%= errorMsg %>
+    </p>
+
+    <%- include('../partials/footer') %>

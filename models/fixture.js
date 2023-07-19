@@ -15,18 +15,18 @@ const predictionSchema = new Schema({
         default: 0
     },
     goalScorer: {
-        type: String
+        type: [String]
     }
 })
 
 const fixtureSchema = new Schema({
-    fixture: String,
-    homeScore: Number,
-    awayScore: Number,
-    goalScorer: String,
+    homeTeam: {
+        type: String
+    },
+    awayTeam: {
+        type: String
+    },
     predictions: [predictionSchema]
-}, {
-    timestamps: true
 });
 
 module.exports = mongoose.model('Fixture', fixtureSchema);
