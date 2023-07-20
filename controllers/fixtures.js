@@ -26,7 +26,7 @@ function newFixture(req, res) {
 }
 
 async function create(req, res) {
-    // req.body.addScorePrediction = !!req.body.addScorePrediction;
+
     try {
         await Fixture.create(req.body);
         res.redirect('/fixtures');

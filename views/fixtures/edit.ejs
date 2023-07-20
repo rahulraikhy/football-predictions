@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+    <form id="add-prediction-form" method="POST"
+        action='/fixtures/<%= fixture._id %>/predictions/<%= prediction._id %>?_method=PUT'>
+        <br>
+        <label>Home Score:</label>
+        <input type="number" name="homeScore" value="<%= prediction.homeScore %>">
+        <br>
+        <label>Away Score:</label>
+        <input type="number" name="awayScore" value="<%= prediction.awayScore %>">
+        <br>
+        <button type="submit">Edit Prediction</button>
+
+    </form>
+
+    <%- include('../partials/footer') %>

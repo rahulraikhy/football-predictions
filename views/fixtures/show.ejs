@@ -7,9 +7,17 @@
     </h2>
     <ul>
         <% userPredictions.forEach((prediction)=> { %>
-            <li>
-                home: <%= prediction.homeScore %> away: <%= prediction.awayScore %>
-            </li>
+            <form method="POST" action='/fixtures/<%= fixture._id %>/predictions/<%= prediction._id %>?_method=DELETE'>
+                <li>
+                    home: <%= prediction.homeScore %> away: <%= prediction.awayScore %>
+                </li>
+                <button type="submit">
+                    Delete
+                </button>
+                <button type="button">
+                    <a href="/fixtures/<%= fixture._id %>/predictions/<%= prediction._id %>/edit">Edit</a>
+                </button>
+            </form>
             <% }); %>
     </ul>
 
