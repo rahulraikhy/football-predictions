@@ -13,7 +13,8 @@ async function index(req, res) {
 async function show(req, res) {
     try {
         const fixture = await Fixture.findById(req.params.id);
-        res.render('fixtures/show', { title: 'Fixture List', fixture });
+        const userPredictions = fixture.predictions.filter((p) => p.owner.toString() == req.user._id);
+        res.render('fixtures/show', { fixture, userPredictions });
     } catch (err) {
         console.log(err);
         res.rediect('/fixtures');

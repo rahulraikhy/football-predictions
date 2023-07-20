@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Fixture = require('../models/fixture');
+require('dotenv').config();
 
 const fixtureData = [
     {
@@ -196,9 +197,11 @@ const fixtureData = [
 
 const seedDatabase = async () => {
     try {
-        await mongoose.connect("")
+
+        await mongoose.connect(process.env.DATABASE_URL)
 
         console.log('connected to the database successfully')
+        await Fixture.deleteMany({});
 
         const fixtures = await Fixture.create(fixtureData)
         console.log('fixtures created')

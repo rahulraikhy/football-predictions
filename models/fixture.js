@@ -6,16 +6,20 @@ const predictionSchema = new Schema({
         type: Number,
         min: 0,
         max: 99,
-        default: 0
+        default: 0,
+        required: true
     },
     awayScore: {
         type: Number,
         min: 0,
         max: 99,
-        default: 0
+        default: 0,
+        required: true
     },
-    goalScorer: {
-        type: [String]
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
 })
 

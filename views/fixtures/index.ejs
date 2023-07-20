@@ -4,25 +4,20 @@
 
     <table>
         <thead>
-            <th>Fixture</th>
-            <th>Home Score</th>
-            <th>Away Score</th>
-            <th>Goalscorer</th>
+            <th>Fixtures Home Team</th>
+            <th>Fixtures Away Team</th>
         </thead>
         <tbody>
             <% fixtures.forEach(function(fixture) { %>
                 <tr>
                     <td>
-                        <%= fixture.fixture %>
+                        <%= fixture.homeTeam %>
                     </td>
                     <td>
-                        <%= fixture.homeScore %>
+                        <%= fixture.awayTeam %>
                     </td>
                     <td>
-                        <%= fixture.awayScore %>
-                    </td>
-                    <td>
-                        <%= fixture.goalScorer %>
+                        <a href="/fixtures/<%= fixture._id %>">Add Prediction</a>
                     </td>
                 </tr>
                 <% }); %>
