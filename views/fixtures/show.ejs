@@ -8,13 +8,13 @@
     <ul>
         <% userPredictions.forEach((prediction)=> { %>
             <form method="POST" action='/fixtures/<%= fixture._id %>/predictions/<%= prediction._id %>?_method=DELETE'>
-                <li>
+                <li class="prediction-texts">
                     home: <%= prediction.homeScore %> away: <%= prediction.awayScore %>
                 </li>
-                <button type="submit">
+                <button class="delete-btn btn" type="submit">
                     Delete
                 </button>
-                <button type="button">
+                <button class="edit-btn btn" type="button">
                     <a href="/fixtures/<%= fixture._id %>/predictions/<%= prediction._id %>/edit">Edit</a>
                 </button>
             </form>
@@ -23,13 +23,13 @@
 
     <form id="add-prediction-form" method="POST" action="/fixtures/<%= fixture._id %>/predictions">
         <br>
-        <label>Home Score:</label>
-        <input type="number" name="homeScore">
+        <label class="score-lbl">Home Score:</label>
+        <input class="score-prediction" type="number" name="homeScore">
         <br>
-        <label>Away Score:</label>
-        <input type="number" name="awayScore">
+        <label class="score-lbl">Away Score:</label>
+        <input class="score-prediction" type="number" name="awayScore">
         <br>
-        <button type="submit">Add Prediction</button>
+        <button class="prediction-btn btn" type="submit">Add Prediction</button>
 
     </form>
 
